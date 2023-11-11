@@ -1,2 +1,9 @@
-<h2>{{lugar.nombre | uppercase}} Detalles</h2>
-<div><span>Nombre:</span> {{lugar.nombre}}</div>
+<h2>Mis Visitas</h2>
+<ul class="lugares">
+  <li *ngFor="let lugar of lugares">
+    <button type="button">
+      <span class="badge">{{lugar.id}}</span>
+      <span class="name">{{lugar.nombre}}</span>
+    </button>
+  </li>
+</ul>

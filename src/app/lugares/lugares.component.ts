@@ -1,14 +1,26 @@
 import { Component } from '@angular/core';
-import { Lugar } from '../lugar';
+import {
+  NgIf,
+  NgFor,
+  UpperCasePipe,
+} from '@angular/common';
+import {FormsModule} from '@angular/forms';
 
-@Component({
+import { Lugar } from '../lugar';
+import { LUGARES } from '../mock-lugares';
+
+@Component({  
+  standalone: true,
   selector: 'app-lugares',
   templateUrl: './lugares.component.html',
-  styleUrls: ['./lugares.component.css']
+  styleUrls: ['./lugares.component.css'],
+  imports: [
+    FormsModule,
+    NgIf,
+    NgFor,
+    UpperCasePipe,
+  ],
 })
 export class LugaresComponent {
-  lugar : Lugar ={
-    id:1,
-    nombre: 'Real de catorce'
-  }
+  lugares = LUGARES;
 }
